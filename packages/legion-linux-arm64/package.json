@@ -1,22 +1,22 @@
 {
-    "name": "@valkyrie-language/legion-win32-arm64",
+    "name": "@valkyrie-language/legion-linux-arm64",
     "version": "0.0.2",
     "license": "UNLICENSED",
     "repository": {
         "type": "git",
         "url": "https://github.com/valkyrie-language/legion4npm.git",
-        "directory": "packages/legion-win32-arm64"
+        "directory": "packages/legion-linux-arm64"
     },
     "type": "module",
     "main": "index.js",
     "os": [
-        "win32"
+        "linux"
     ],
     "cpu": [
         "arm64"
     ],
     "bin": {
-        "legion-win32-arm64": "legion-win32-arm64"
+        "legion-linux-arm64": "legion-linux-arm64"
     },
     "publishConfig": {
         "access": "public",

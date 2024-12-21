@@ -1,6 +1,6 @@
 {
     "name": "@valkyrie-language/legion",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Valkyrie language package manager",
     "homepage": "https://github.com/valkyrie-language/legion",
     "repository": {
