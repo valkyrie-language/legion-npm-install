@@ -6,13 +6,10 @@
     "workspaces": [
         "packages/*"
     ],
-    "scripts": {
-
-    },
-    "dependencies": {
-
-    },
+    "scripts": {},
     "devDependencies": {
-
+        "@bytecodealliance/jco": "^1.8.1",
+        "@types/node": "^22",
+        "typescript": "^5.7.2"
     }
 }
