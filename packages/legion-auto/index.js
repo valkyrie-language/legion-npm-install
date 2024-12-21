@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import {execFileSync, execFile} from "node:child_process";
-import {endianness} from "node:os";
+import {execFileSync} from "node:child_process";
 import {platform, arch} from "node:process";
 
 const prebuiltPlatform = {
@@ -23,11 +22,10 @@ export function adaptPlatform () {
 
 export async function runLegion (args) {
     const pkg = await import(adaptPlatform());
-    execFileSync(pkg.location, args, {stdio: "inherit"});
+    const cfg = {
+        stdio: 'inherit',
+        encoding: 'utf-8',
+    }
+    return execFileSync(pkg.location, args, cfg);
 }
 
-export async function runLegion2 (args) {
-    const pkg = await import(adaptPlatform());
-    console.log("咋回事")
-    return execFile(pkg.location, args, null);
-}
