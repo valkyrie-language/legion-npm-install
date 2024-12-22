@@ -12,7 +12,6 @@ test("wasm component to wat", async () => {
         })
         const module = binaryen.readBinary(bytes)
         binaryen.setOptimizeLevel(4)
-        
         module.optimize()
     } catch (e) {
         console.error(e)
