@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import {program} from "commander";
-import {matchInstall} from "./installCommand";
-import {matchEncode} from "./matchEncode";
-import {matchDecode} from "./matchDecode";
+import {matchInstall} from "./installCommand.js";
+import {matchEncode} from "./matchEncode.js";
+import {matchDecode} from "./matchDecode.js";
 
 program
 .name('legion')
