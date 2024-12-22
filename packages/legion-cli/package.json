@@ -1,27 +1,27 @@
 {
     "name": "@valkyrie-language/legion",
-    "version": "0.0.1",
-    "description": "Valkyrie language package manager",
-    "homepage": "https://github.com/valkyrie-language/legion",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/valkyrie-language/legion4npm.git",
-        "directory": "packages/legion-auto"
-    },
-    "bugs": {
-        "url": "https://github.com/valkyrie-language/legion/issues"
-    },
-    "license": "UNLICENSED",
-    "type": "module",
-    "main": "src/index.ts",
-    "bin": {
-        "legion": "legion.js"
-    },
+    "version": "0.0.0",
+    "description": "",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "typings": "dist/index.d.ts",
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.org/"
     },
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint 'src/**/*.{js,ts,tsx}'",
+        "prepublishOnly": "npm run build"
+    },
     "dependencies": {
-        "@valkyrie-language/legion-wasm32-wasi": "^0.0.0"
+        "@types/node": "^22.10.2",
+        "@valkyrie-language/legion-wasm32-wasi": "^0.0.0",
+        "commander": "^12.1.0",
+        "figlet": "^1.8.0"
+    },
+    "devDependencies": {
+        "@types/figlet": "^1.7.0"
     }
 }
