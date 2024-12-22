@@ -1,9 +1,31 @@
-# `legion` on `npm`
+Rust Template Project
+=====================
 
-```sh
-# automatically download the latest version from github release
-npm install @valkyrie-language/legion -D
-# only for china user, and `vendor` is not the latest version automatically updated on github release
-npm install @valkyrie-language/legion-vendor -D --registry=https://registry.npmmirror.com
+Rust template project for monorepo
+
+## Change the initial commit
+
+```shell
+git commit --amend --message "🎂 Project initialized!" --date "2012-12-12"
 ```
 
+## Emoji Comment
+
+| Emoji  | Meaning                      |  
+|--------|------------------------------|  
+| 🎂     | Project initialized!         |  
+| 🎉     | Release new version          |  
+| 🧪🔮   | Experimental code            |   
+| 🔧🐛🐞 | Bug fix                      |  
+| 🔒     | Security fix                 |  
+| 🐣🐤🐥 | Add feature                  |  
+| 📝🎀   | Documentation                |  
+| 🚀     | Performance improve!         |  
+| 🚧     | Work in progress             |  
+| 🚨     | Test coverage improve!       |  
+| 🚥     | CI improve!                  |  
+| 🔥🧨   | Remove code or files         |
+| 🧹     | Code refactor                |
+| 📈     | Add analytics or branch code |
+| 🤖     | Automation fix               |
+| 📦     | Update dependencies          |
