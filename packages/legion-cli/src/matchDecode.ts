@@ -23,7 +23,10 @@ interface DecodeOptions {
 
 async function decodeCommand(input: string, output: string | null, options: DecodeOptions) {
     let inputBytes = await fs.readFile(input);
-    let bytes = decodeWasm(inputBytes, {...options})
+    let bytes = decodeWasm(inputBytes, {
+
+
+        ...options})
     if (output === null) {
         let inputPath = path.parse(input);
         output = `${inputPath.dir}/${inputPath.name}.wat`;

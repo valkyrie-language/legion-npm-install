@@ -2,8 +2,8 @@
     "extends": "../../tsconfig.json",
     "compilerOptions": {
         "strict": true,
-        "target": "ES2015",
-        "module": "ES2015",
+        "target": "ESNext",
+        "module": "ESNext",
         "moduleResolution": "node",
         "allowJs": false,
         "declaration": true,
