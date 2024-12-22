@@ -21,15 +21,26 @@ interface DecodeOptions {
     foldInstructions: boolean
 }
 
-async function decodeCommand(input: string, output: string | null, options: DecodeOptions) {
-    let inputBytes = await fs.readFile(input);
-    let bytes = decodeWasm(inputBytes, {
-
-
-        ...options})
-    if (output === null) {
-        let inputPath = path.parse(input);
-        output = `${inputPath.dir}/${inputPath.name}.wat`;
+export async function decodeCommand(input: string, output: string | undefined, options: DecodeOptions) {
+    try {
+        let inputBytes = await fs.readFile(input);
+        let bytes = decodeWasm(inputBytes, {
+            skeletonOnly: options.skeletonOnly || false,
+            nameUnnamed: options.nameUnnamed || false,
+            foldInstructions: options.foldInstructions || false
+        })
+        if (output === undefined) {
+            let inputPath = path.parse(input);
+            output = `${inputPath.dir}/${inputPath.name}.wat`;
+        }
+        if (options.dryRun) {
+            console.log(`[Dry Run] Writing to ${output}`);
+        } else {
+            console.log(`Writing to ${output}`);
+            await fs.writeFile(output, bytes);
+        }
+    } catch (e) {
+        console.error(e);
+        process.exit(1);
     }
-    await fs.writeFile(output, bytes);
 }

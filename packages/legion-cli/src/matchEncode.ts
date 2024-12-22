@@ -27,7 +27,13 @@ export async function encodeCommand(input: string, output: string | undefined, o
             let inputPath = path.parse(input);
             output = `${inputPath.dir}/${inputPath.name}.wasm`;
         }
-        await fs.writeFile(output, bytes);
+        if (options.dryRun) {
+             console.log(`[Dry Run] Writing to ${output}`);
+        }
+        else {
+            console.log(`Writing to ${output}`);
+            await fs.writeFile(output, bytes);
+        }
     } catch (e) {
         console.error(e);
         process.exit(1);
