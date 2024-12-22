@@ -1,7 +1,7 @@
 import {program} from "commander";
-import {decodeWasm, encodeWasm} from "@valkyrie-language/legion-wasm32-wasi";
 import * as fs from "node:fs/promises";
 import * as path from 'path';
+import {wasmDecode} from "@valkyrie-language/legion-wasm32-wasi";
 
 export function matchDecode() {
     program
@@ -24,7 +24,7 @@ interface DecodeOptions {
 export async function decodeCommand(input: string, output: string | undefined, options: DecodeOptions) {
     try {
         let inputBytes = await fs.readFile(input);
-        let bytes = decodeWasm(inputBytes, {
+        let bytes = wasmDecode(inputBytes, {
             skeletonOnly: options.skeletonOnly || false,
             nameUnnamed: options.nameUnnamed || false,
             foldInstructions: options.foldInstructions || false

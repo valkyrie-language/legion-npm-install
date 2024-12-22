@@ -18,11 +18,8 @@
     },
     "dependencies": {
         "@types/node": "^22.10.2",
-        "@valkyrie-language/legion-wasm32-wasi": "^0.0.0",
-        "commander": "^12.1.0",
-        "figlet": "^1.8.0"
-    },
-    "devDependencies": {
-        "@types/figlet": "^1.7.0"
+        "@valkyrie-language/legion-wasm32-wasi": "^0.0.1",
+        "binaryen": "^121.0.0",
+        "commander": "^12.1.0"
     }
 }

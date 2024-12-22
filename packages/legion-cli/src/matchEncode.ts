@@ -1,6 +1,6 @@
 import {Command, program} from "commander";
 import fs from "node:fs/promises";
-import {encodeWasm} from "@valkyrie-language/legion-wasm32-wasi";
+import {watEncode} from "@valkyrie-language/legion-wasm32-wasi";
 import path from "path";
 
 export function matchEncode() {
@@ -20,7 +20,7 @@ interface EncodeOptions {
 export async function encodeCommand(input: string, output: string | undefined, options: EncodeOptions) {
     try {
         let inputText = await fs.readFile(input, 'utf8');
-        let bytes = encodeWasm(inputText, {
+        let bytes = watEncode(inputText, {
             generateDwarf: options.generateDwarf || false
         })
         if (output === undefined) {
@@ -28,9 +28,8 @@ export async function encodeCommand(input: string, output: string | undefined, o
             output = `${inputPath.dir}/${inputPath.name}.wasm`;
         }
         if (options.dryRun) {
-             console.log(`[Dry Run] Writing to ${output}`);
-        }
-        else {
+            console.log(`[Dry Run] Writing to ${output}`);
+        } else {
             console.log(`Writing to ${output}`);
             await fs.writeFile(output, bytes);
         }
